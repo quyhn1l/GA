@@ -24,23 +24,25 @@ public class Chromosome extends PathWay implements Comparable<Chromosome> {
 	}
 
 	public int getNumberGenes() {
-	    return this.getNumberCities();
+		return this.getNumberCities();
 	}
+
 	public City getGene(int index) {
 		return getCity(index);
 	}
+
 	public void setGene(int index, City gene) {
-        addCity(gene, index);
-    }
+		addCity(gene, index);
+	}
 
 	public boolean containsGene(City gene) {
-	    for (int i = 0; i < getNumberCities(); i++) {
-	        City currentGene = getGene(i);
-	        if (currentGene != null && currentGene.equals(gene)) {
-	            return true;
-	        }
-	    }
-	    return false;
+		for (int i = 0; i < getNumberCities(); i++) {
+			City currentGene = getGene(i);
+			if (currentGene != null && currentGene.equals(gene)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -53,17 +55,17 @@ public class Chromosome extends PathWay implements Comparable<Chromosome> {
 			return 0; // Cá thể hiện tại có fitness bằng cá thể other
 		}
 	}
-	
+
 	@Override
 	public String toString() {
-	    StringBuilder sb = new StringBuilder();
-	    for (int i = 0; i < getNumberCities(); i++) {
-	        City city = getGene(i);
-	        sb.append(city.getIndexCity());
-	        if (i < getNumberCities() - 1) {
-	            sb.append(" -> ");
-	        }
-	    }
-	    return sb.toString();
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < getNumberCities(); i++) {
+			City city = getGene(i);
+			sb.append(city.getIndexCity());
+			if (i < getNumberCities() - 1) {
+				sb.append(" -> ");
+			}
+		}
+		return sb.toString();
 	}
 }

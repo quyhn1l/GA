@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
-		Map map = new Map("C:\\Users\\DELL\\eclipse-workspace\\GA\\eil51.tsp");
+		Map map = new Map("C:\\Users\\DELL\\eclipse-workspace\\GAforTSP\\eil51.tsp");
 
 		ParentSelector parentSelector = new TournamentSelection(Const.TOURNAMENT_SIZE);
 		Crossover crossover = new OrderCrossover();
